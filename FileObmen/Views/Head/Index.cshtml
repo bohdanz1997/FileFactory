@@ -1,0 +1,10 @@
+﻿@if ((bool)ViewBag.IsAuth)
+{
+    <li>@Html.ActionLink("Личный кабинет", "Index", "ProFile")</li>
+    <li>@Html.ActionLink("Выйти", "Logoff", "Account")</li>
+}
+else
+{
+    <li>@Html.ActionLink("Вход", "Login", "Account")</li>
+    <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
+}

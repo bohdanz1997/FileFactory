@@ -1,0 +1,32 @@
+﻿@using FileObmen.Helpers
+@model IEnumerable<FileObmen.Models.Entities.File>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <th>Файл</th>
+                <th>Изменить</th>
+                <th>Удалить</th>
+            </tr>
+            @foreach (var file in Model)
+            {
+                <tr>
+                    <td>@Html.PageLinks(file, x => Url.Action("ShowFile", "Home",
+                        new { sha = x }))</td>
+                    <td>@Html.ActionLink("Изменить", "EditFile", "File", new { sha = file.Sha }, null)</td>
+                    <td>@using (Html.BeginForm("DelFile", "File"))
+                        {
+                            <input type="hidden" name="sha" value="@file.Sha"/>
+                            @Html.SubmitField(file.Sha)
+                        }</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>Вы не загрузили ни одного файла</h3>
+}

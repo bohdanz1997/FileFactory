@@ -1,0 +1,81 @@
+﻿@model FileObmen.Models.ViewModels.FileEditModel
+
+@{
+    ViewBag.Title = "Success";
+}
+
+<h3>Файл "@Model.Name" загружен успешно</h3>
+<div class="file-link">
+    <p>
+        Ссылка на файл: @Html.ActionLink(Url.Action("ShowFile",
+                            new { sha = Model.Sha }), 
+                            "ShowFile", new { sha = Model.Sha })
+    </p>
+</div>
+<br />
+@using (Html.BeginForm("EditFile", "File", FormMethod.Post,
+    new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+     
+    <div>
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Emailes, new { @class = "col-md-2 control-label" })
+            <div class ="col-md-10">
+                @Html.TextBoxFor(model => model.Emailes, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Emailes)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "col-md-2 control-label" })
+            <div class ="col-md-10">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "col-md-2 control-label" })
+            <div class ="col-md-10">
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, new { @class = "col-md-2 control-label" })
+            <div class ="col-md-10">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeleteTime, new { @class = "col-md-2 control-label" })
+            <div class ="col-md-10">
+                @Html.DropDownListFor(model => model.DeleteTime, new[]
+                    {
+                        new SelectListItem {Text = "1 день", Value = "1"},
+                        new SelectListItem {Text = "7 дней", Value = "7"},
+                        new SelectListItem {Text = "30 дней", Value = "30"},
+                        new SelectListItem {Text = "90 дней", Value = "90"},
+                    }, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DeleteTime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class ="col-md-offset-2 col-md-10">
+                <input type="hidden" name="Id" value="@Model.Id"/>
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

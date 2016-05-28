@@ -1,0 +1,14 @@
+﻿
+@media (min-width: 1200px) {
+    .nav-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .nav-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}

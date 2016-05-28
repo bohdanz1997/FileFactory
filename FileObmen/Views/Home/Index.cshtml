@@ -1,0 +1,324 @@
+﻿@model bool
+
+@{
+    string SiteName = ViewBag.Title = "Главная";
+    if (Request != null)
+    {
+        ViewBag.Title = "FileFactory";
+        SiteName = "FileFactory";
+    }
+}
+
+@section styles {
+    <link rel="stylesheet" href="~/Content/cut-header.css"/>
+}
+
+<div class="header-wrap">
+    <div class="container">
+        <div class="main-top text-center">
+            <div class="text-top-big">Добро пожаловать на @SiteName</div>
+            <div class="text-top-small">Это самый легкий способ отправлять и делится файлами</div>
+        </div>
+        <div class="col-lg-8 col-lg-push-2">
+            <div class="box block-welcome-wrap">
+                <div class="box-content block-welcome">
+                    @if (Model)
+                    {
+                        <div class="text-center">
+                            <span class="line3">Добро пожаловать, ваш аккаунт готов</span>
+                            @Html.ActionLink("Загружайте файлы", "Plupload", "File",
+                            null, new { @class = "btn btn-success btn-lg btn-wide" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="get-started text-center">
+                            <div class="row">
+                                <span class="line1">Впервые на нашем сайте?</span>
+                                <span class="line2">Начните работу с</span>
+                                <span class="line3">Бесплатным 1GB аккаунтом</span>
+                                @Html.ActionLink("Зарегистрироватся", "Register", "Account",
+                                null, new { @class = "btn btn-primary btn-lg btn-wide" })
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <span class="line1">Хотите вернутся?</span>
+                                @Html.ActionLink("Войти", "Login", "Account",
+                                null, new { @class = "btn btn-success btn-lg btn-wide" })
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="home-main">
+    <div class="col-sm-10 col-sm-push-1">
+        <div class="container intro">
+            <div class="row text-center">
+                <div class="title-new-center">С нами загружать и делится файлами - просто!</div>
+
+                <div class="row header">
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="box">
+                            <div class="box-content">
+                                <img src="~/Content/images/Main1.png" width="207" height="171" alt="Alternate Text" />
+                                <span>Выбирайте&nbsp;и&nbsp;загружайте&nbsp;файлы</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="box">
+                            <div class="box-content">
+                                <img src="~/Content/images/Main3.png" width="286" height="171" alt="Alternate Text" />
+                                <span>Получите&nbsp;ссылку&nbsp;на&nbsp;файл</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-4">
+                        <div class="box">
+                            <div class="box-content">
+                                <img src="~/Content/images/Main2.png" width="163" height="169" alt="Alternate Text" />
+                                <span>Поделитесь&nbsp;ссылкой</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="container">
+    <div class="background-side">
+        <div class="col-sm-10 col-sm-push-1">
+            <div class="title-new-center">Особенности загрузки и совместного использования</div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle feature-header" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        Простая загрузка и генерация ссылок
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="~/Content/images/feature0.png" class="feature-img" alt="Alternate Text" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p class="feature-text">Вместе с нами очень просто выбирать, загружать и делится большими файлами или любыми типами файлов. Большинство интернет-решений для хранения данных в первую очередь требуют разместить ваши файлы в Интернете, орзанизовать их в общих папках и создавать новые ссылки. Наш сайт отличается и намного проще. С нами вы выбираете файлы в одном месте, загружаете и получаете ссылку для скачки сразу. Вы можете выслать или поделится ссылкой с другими используя email-почту, почтовые мессенджеры или социальные сети. Это так просто.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle feature-header" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        Это ваша ссылка, используйте ее как хотите
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="~/Content/images/feature2.png" alt="Alternate Text" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p class="feature-text">Когда ваши файлы начнут загрузку, наш сайт представляет ссылку на скачивание. Вы можете копировать/вставить ссылку или непосредственно отправить ссылку с помощью электронной почты , мгновенных сообщений , или инструменты социальных сетей . Другие решения часто не разделяют ссылку скачать и отправить его своим получателям от вашего имени . В этом случае адрес электронной почты вашего получателя собирается и используется для создания их маркетинговой базы данных . Attachmore ценит конфиденциальность общения между вами и вашим получателям . Предоставляя ссылку загрузки для вас, мы остаемся за кулисами, и вы держите центральное место с вашими получателями .</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle feature-header" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        Срок хранения файлов
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="~/Content/images/feature1.png" alt="Alternate Text" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p class="feature-text">Ссылки на скачивание истекают автоматически на основе количества загрузок или период времени вы установили. Ваши получатели не имеют навсегда доступ к файлам , и вы не должны управлять доступом пользователей . Кроме того, когда ссылки истекает , поэтому может ваши файлы . Наш сайт может автоматически очистить ваши файлы с вашего счета и облака . Вам не нужно беспокоиться об управлении другое место для хранения ваших данных.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle feature-header" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                        Защита ссылок, файлов паролем
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="~/Content/images/feature3.png" alt="Alternate Text" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p class="feature-text">Ссылки для скачивания может быть безопасным, как вы хотите, чтобы они были. Наймите 256bit AES шифрование при загрузке и загрузки файлов . Вы также можете выбрать, чтобы требовать, чтобы получатели ввести адрес электронной почты или пароль перед загрузкой . Все загрузки деятельности , такие как IP- адрес Загрузчик , адрес электронной почты и дату и время , когда произошла загрузка регистрируются . Параметры безопасности можно установить на лету во время загрузки или назначается в качестве значения по умолчанию для всех ссылок .</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading text-center">
+                                <h4 class="panel-title">
+                                    <a class="accordion-toggle feature-header" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                        Одинаковый на разных девайсах
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="~/Content/images/feature5.png" alt="Alternate Text" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <p class="feature-text">Наш сайт разработан, чтобы работать на всех устройствах . На главной странице нашего сайта вы можете загрузить фотографии с телефона или планшета , чтобы поделиться с друзьями . Большинство инструментов обмена на телефон или планшет отправлять и обмениваться Пиктограммы версии или низкие версии разрешение файла . сайт будет загружать сам файл , а не деградирует версии . Получатели получить ваш лучший , так же, как вы хотите.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content plans-needs">
+    <div class="col-sm-10 col-sm-push-1">
+        <div class="title-new-center">Планы для удовлетворения ваших потребностей</div>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-md-3">
+                <div class="panel panel-custom panel-tariffCard">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Бесплатный аккаунт - 1GB</h3>
+                    </div>
+                    <div class="panel-body priceTag">
+                        <div class="the-price">
+                            <h2>$0<span class="subscript">/мес</span></h2>
+                        </div>
+                        <table class="table tariffCardTable">
+                            <tr>
+                                <td>1GB дискового пространства </td>
+                            </tr>
+                            <tr>
+                                <td>до 30 дней хранения файлов</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="panel-footer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="panel panel-custom panel-tariffCard">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">$6.95 - Загружайте 5GB</h3>
+                    </div>
+                    <div class="panel-body priceTag">
+                        <div class="the-price">
+                            <h2>$6.95<span class="subscript">/мес</span></h2>
+                        </div>
+                        <table class="table tariffCardTable">
+                            <tr>
+                                <td>5GB дискового пространства </td>
+                            </tr>
+                            <tr>
+                                <td>до 90 дней хранения файлов</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="panel-footer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="panel panel-custom panel-tariffCard">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">$9.95 - Загружайте 10GB</h3>
+                    </div>
+                    <div class="panel-body priceTag">
+                        <div class="the-price">
+                            <h2>$9.95<span class="subscript">/мес</span></h2>
+                        </div>
+                        <table class="table tariffCardTable">
+                            <tr>
+                                <td>10GB дискового пространства </td>
+                            </tr>
+                            <tr>
+                                <td>до 120 дней хранения файлов</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="panel-footer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="panel panel-custom panel-tariffCard">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">$24.95 - Загружайте 20GB</h3>
+                    </div>
+                    <div class="panel-body priceTag">
+                        <div class="the-price">
+                            <h2>$24.95<span class="subscript">/мес</span></h2>
+                        </div>
+                        <table class="table tariffCardTable">
+                            <tr>
+                                <td>20GB дискового пространства </td>
+                            </tr>
+                            <tr>
+                                <td>Неограниченый срок хранения файлов</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="panel-footer">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

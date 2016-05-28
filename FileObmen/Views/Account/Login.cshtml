@@ -1,0 +1,54 @@
+﻿@model FileObmen.Models.ViewModels.LoginModel
+
+@{
+    Layout = "~/Views/Shared/_Account.cshtml";
+    ViewBag.Title = "Вход";
+}
+
+<div class="header">
+    Вход на сайт
+</div>
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post,
+                                new { role = "form", @class = "form-horizontal login" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset class="col-sm-12">
+        <div class="form-group">
+            <div class="controls row">
+                <div class="input-group col-sm-12">
+
+                    @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = "Ваш Логин" })
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                </div>
+                @Html.ValidationMessageFor(model => model.Login)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="controls row">
+                <div class="input-group col-sm-12">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Пароль" })
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                </div>
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </div>
+
+        <div class="confirm">
+            <input type="checkbox" id="remember" />
+            <label for="remember">Запомнить меня</label>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-lg btn-primary col-xs-12" type="submit">Ввойти</button>
+        </div>
+
+    </fieldset>
+}
+
+@Html.ActionLink("Забыли пароль?", "Register", "Account", new { @class = "pull-left" })
+@Html.ActionLink("Зарегистрироватся", "Register", "Account", new { @class = "pull-right" })
+

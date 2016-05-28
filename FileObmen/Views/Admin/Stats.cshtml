@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Stats";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="box">
+        <div class="box-header">
+            <h2>
+                <i class="fa fa-bar-chart-o"></i>Траффик пользователей
+            </h2>
+            <ul class="nav nav-tabs" id="">
+                <li id="chart24h" class="active"><a data-toggle="tab" href="#week">Неделя</a></li>
+                <li id="chartWeek"><a data-toggle="tab" href="#month">Месяц</a></li>
+            </ul>
+        </div>
+        <div class="box-content">
+            <div class="tab-content">
+                <div class="tab-pane active" id="week">
+                    <div id="traffic-week" style="height: 300px; width: 100%"></div>
+                </div>
+                <div class="tab-pane" id="month">
+                    <div id="traffic-month" style="height: 300px; width: 100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="box">
+        <div class="box-header">
+            <h2>
+                <i class="fa fa-bar-chart-o"></i>Браузеры
+            </h2>
+        </div>
+        <div class="box-content">
+            <div id="piechart" style="height: 300px"></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="box">
+        <div class="box-header">
+            <h2><i class="fa fa-bar-chart-o"></i>Топ-5 аплоадеров</h2>
+        </div>
+        <div class="box-content">
+            <figure class="demo" id="example1" style="height: 300px"></figure>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+@section scripts
+{
+    <script src="~/Scripts/genius/jquery.flot.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.pie.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.stack.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.resize.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.time.min.js"></script>
+    <script src="~/Scripts/genius/xcharts.min.js"></script>
+    <script src="~/Scripts/genius/d3.min.js"></script>
+    <script src="~/Scripts/genius/pages/charts-flot.js"></script>
+    <script src="~/Scripts/genius/pages/charts-xcharts.js"></script>
+    <script src="~/Scripts/genius/pages/ui-sliders-progress.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetAllFiles", "Profile")',
+                dataType: 'json',
+                success: function (data) {
+                    initPieChart();
+                    var visits = [];
+                    var i;
+                    for (i = 0; i < 30; i++) {
+                        visits[i] = [i + 1, ((Math.floor(Math.random() * (1 + 40 - 20))) + 20) * 1200];
+                    }
+                    var week = [];
+                    var month = [];
+                    var k = 1;
+                    var day = (new Date()).getDate();
+
+                    if (day > 7) {
+                        for (i = day - 6; i <= day; i++) {
+                            week[k] = [i, data[i - 1] / 1024];
+                            k++;
+                        }
+                    } else {
+                        for (i = 1; i <= day; i++) {
+                            week[i] = [i, data[i - 1] / 1024];
+                        }
+                    }
+
+                    for (i = 0; i < data.length; i++) {
+                        month[i] = [i, data[i - 1] / 1024];
+                    }
+
+                    initTrafficChart(week, "#traffic-week");
+                    initTrafficChart(month, "#traffic-month");
+                    initTrafficChart(visits, "#trafficChart");
+                }
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetUsersRating", "Profile")',
+                dataType: 'json',
+                success: function (data) {
+                    initStackChart2(data);
+                }
+            });
+        });
+
+    </script>
+}

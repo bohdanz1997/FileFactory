@@ -1,0 +1,65 @@
+﻿@using FileObmen.Tools
+@using PagedList.Mvc;
+@model PagedList.IPagedList<FileObmen.Models.Entities.File>
+@section styles {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="col-sm-10 col-sm-push-1">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <div class="box-content">
+                    <div class="description-block-wrap">
+                        <div class="pull-right text-center">
+                            <img width="88" height="64" src="~/Content/images/iconWebSend.png"/>
+                            <div>@Html.ActionLink("Загрузить файлы", "Plupload", "File", null, new {@class = "btn btn-default btn-140px"})</div>
+                        </div>
+                        <div class="description-block">Здесь показан список файлов, которые вы загрузили на свой аккаунт. Вы можете посмотреть краткую информацию по файлам, скачать, редактировать или удалить ваши файлы</div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <table class="table table-bordered table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th>Файл</th>
+                            <th>Размер</th>
+                            <th>Загружен</th>
+                            <th>Истекает</th>
+                            <th>Действия</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if (Model.Any())
+                        {
+                            foreach (var file in Model)
+                            {
+                                <tr class="@file.Sha">
+                                    <td>
+                                        @Html.PageLinks(file, x => Url.Action("Details", "File",
+                                            new {sha = x}))
+                                    </td>
+                                    <td>@Html.FileSize(file.Size)</td>
+                                    <td>@file.CreationTime.ToShortDateString()</td>
+                                    <td>@file.DeleteTime.ToShortDateString()</td>
+                                    <td>
+                                        @Html.ActionLink(" ", "GetFile", "File", new {sha = file.Sha}, new {@class = "btn btn-success btn-edit" })
+                                        @Html.ActionLink(" ", "EditFile", "File", new {sha = file.Sha}, new {@class = "btn btn-info btn-download compItem" })
+                                        <button class="btn btn-danger" name="del-btn" id="@file.Sha">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+                    @Html.PagedListPager(Model, page => Url.Action("FilesUploaded", new {page}))
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/modal-init.js"></script>
+}

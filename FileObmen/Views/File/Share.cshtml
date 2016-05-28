@@ -1,0 +1,61 @@
+﻿@model FileObmen.Models.ViewModels.ShareModel
+
+@{
+    ViewBag.Title = "Share";
+}
+
+<style>
+    .form-group input[type=text] {
+        display: inline-block;
+    }
+
+    #remove {
+        margin-left: 5px;
+    }
+</style>
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal" area-hidden="true">&times;</button>
+        <h2><i class="fa fa-pencil"></i>&nbsp;&nbsp;Укажите получателя
+        </h2>
+    </div>
+    <div class="modal-body">
+        @using (Html.BeginForm("Share", "File", FormMethod.Post,
+            new {role = "form", @class = "form-horizontal login"}))
+        {
+            <div class="form-group">
+                <button class="btn btn-default" id="add">Добавить</button>
+                <button class="btn btn-default" id="remove">Удалить</button>
+            </div>
+            <div class="form-group" id="last">
+                <input type="text" class="form-control" name="Senders"/>
+            </div>
+            @Html.HiddenFor(m => m.Guid)
+            <input type="submit" class="btn btn-primary" value="Отправить"/>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $('#add').click(function (e) {
+            e.preventDefault();
+            var last = $('#last');
+            last.after(
+                "<div class='form-group' id='last'>" +
+                    "<input type='text' class='form-control' name='Senders' />" +
+                "</div>");
+            last.removeAttr('id');
+        });
+
+        $('#remove').click(function (e) {
+            e.preventDefault();
+            $('#last').remove();
+            $('.form-group:last').attr('id', 'last');
+        });
+    </script>
+}

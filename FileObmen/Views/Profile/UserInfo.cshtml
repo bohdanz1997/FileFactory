@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "UserInfo";
+    string pass = new string('*', Model.Password.Length);
+}
+
+<div class="col-sm-10 col-sm-push-1">
+    <div class="row">
+        <div class="col-md-10 col-md-push-1">
+            <div class="box">
+                <div class="box-header">
+                    <h2>
+                        <i class="fa fa-user"></i>Учетные данные
+                    </h2>
+                </div>
+                <div class="box-content">
+                    <div class="row">
+                        <div style="margin-bottom: 30px" class="col-sm-3 col-xs-4">
+                            <img class="img-thumbnail" src="@Url.Action("GetImage", new {userId = Model.Id})" alt="Sample Image">
+                        </div>
+                        @Html.ActionLink("Изменить аватар", "SetAvatar", null, new { @class = "btn btn-primary" })
+                    </div>
+
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Логин</td>
+                                <td>@Model.Login</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>@Model.Email</td>
+                            </tr>
+                            <tr>
+                                <td>Возраст</td>
+                                <td>@Model.Age</td>
+                            </tr>
+                            <tr>
+                                <td>Дата регистрации</td>
+                                <td>@Model.RegistrationDate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 20px">
+                        @Html.ActionLink("Изменить", "EditProfile", null, new { @class = "btn btn-primary compItem" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-push-1">
+            <div class="box">
+                <div class="box-header">
+                    <h2><i class="fa fa-user"></i>Мой пароль</h2>
+                </div>
+                <div class="box-content">
+                    <div class="password-encoded">@pass</div>
+                    @Html.ActionLink("Изменить пароль", "ChangePassword", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $.ajaxSetup({ cache: false });
+            $(".compItem").click(function (e) {
+
+                e.preventDefault();
+                $.get(this.href, function (data) {
+                    $('#dialogContent').html(data);
+                    $('#modDialog').modal('show');
+                });
+            });
+        });
+
+    </script>
+}

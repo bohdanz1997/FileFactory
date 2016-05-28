@@ -1,0 +1,137 @@
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\FileObmen.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\FileObmen.pdb
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Antlr3.Runtime.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\EntityFramework.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Newtonsoft.Json.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Net.Http.Formatting.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Http.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Http.WebHost.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Mvc.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Optimization.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Providers.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Razor.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Deployment.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Razor.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\WebGrease.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\EntityFramework.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Newtonsoft.Json.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Net.Http.Formatting.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Http.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Http.WebHost.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Mvc.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.Razor.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Deployment.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Razor.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\EntityFramework.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Net.Http.Formatting.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.Http.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.Http.WebHost.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.Mvc.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.Providers.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.Razor.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.WebPages.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.pdb
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.InitialCreate.resources
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.Migration1.resources
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.Migration2.resources
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.Mvc.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.pdb
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.Mvc.pdb
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.Mvc.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\NLog.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\NLog.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\AutoMapper.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Ninject.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Ninject.Web.Common.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Ninject.Web.Mvc.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\WebActivatorEx.dll
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\AutoMapper.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Ninject.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Ninject.Web.Common.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\bin\Ninject.Web.Mvc.xml
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.Role.resources
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.AvatarPath.resources
+C:\Users\admin\Documents\Visual Studio 2012\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.UserName.resources
+E:\Projects\FileObmen\FileObmen\bin\FileObmen.dll.config
+E:\Projects\FileObmen\FileObmen\bin\FileObmen.dll
+E:\Projects\FileObmen\FileObmen\bin\FileObmen.pdb
+E:\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.dll
+E:\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.Mvc.dll
+E:\Projects\FileObmen\FileObmen\bin\Antlr3.Runtime.dll
+E:\Projects\FileObmen\FileObmen\bin\AutoMapper.dll
+E:\Projects\FileObmen\FileObmen\bin\EntityFramework.dll
+E:\Projects\FileObmen\FileObmen\bin\Microsoft.Web.Infrastructure.dll
+E:\Projects\FileObmen\FileObmen\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Projects\FileObmen\FileObmen\bin\Newtonsoft.Json.dll
+E:\Projects\FileObmen\FileObmen\bin\Ninject.dll
+E:\Projects\FileObmen\FileObmen\bin\Ninject.Web.Common.dll
+E:\Projects\FileObmen\FileObmen\bin\Ninject.Web.Mvc.dll
+E:\Projects\FileObmen\FileObmen\bin\NLog.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Net.Http.Formatting.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Http.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Http.WebHost.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Mvc.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Optimization.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Providers.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Razor.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Deployment.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.dll
+E:\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Razor.dll
+E:\Projects\FileObmen\FileObmen\bin\WebActivatorEx.dll
+E:\Projects\FileObmen\FileObmen\bin\WebGrease.dll
+E:\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.pdb
+E:\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.xml
+E:\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.Mvc.pdb
+E:\Projects\FileObmen\FileObmen\bin\ActionMailer.Net.Mvc.xml
+E:\Projects\FileObmen\FileObmen\bin\AutoMapper.xml
+E:\Projects\FileObmen\FileObmen\bin\Ninject.xml
+E:\Projects\FileObmen\FileObmen\bin\Ninject.Web.Common.xml
+E:\Projects\FileObmen\FileObmen\bin\Ninject.Web.Mvc.xml
+E:\Projects\FileObmen\FileObmen\bin\NLog.xml
+E:\Projects\FileObmen\FileObmen\bin\EntityFramework.xml
+E:\Projects\FileObmen\FileObmen\bin\Newtonsoft.Json.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Net.Http.Formatting.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Http.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Http.WebHost.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Mvc.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Web.Razor.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Deployment.xml
+E:\Projects\FileObmen\FileObmen\bin\System.Web.WebPages.Razor.xml
+E:\Projects\FileObmen\FileObmen\bin\ru\EntityFramework.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Net.Http.Formatting.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.Http.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.Http.WebHost.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.Mvc.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.Optimization.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.Providers.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.Razor.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.WebPages.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.WebPages.Deployment.resources.dll
+E:\Projects\FileObmen\FileObmen\bin\ru\System.Web.WebPages.Razor.resources.dll
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.InitialCreate.resources
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.Migration1.resources
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.Migration2.resources
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.Role.resources
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.AvatarPath.resources
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.Migrations.UserName.resources
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.csproj.GenerateResource.Cache
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.dll
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.pdb
+E:\Projects\FileObmen\FileObmen\obj\Debug\FileObmen.csprojResolveAssemblyReference.cache
+E:\Projects\FileObmen\FileObmen\bin\PagedList.dll
+E:\Projects\FileObmen\FileObmen\bin\PagedList.Mvc.dll
+E:\Projects\FileObmen\FileObmen\bin\PagedList.xml
+E:\Projects\FileObmen\FileObmen\bin\PagedList.Mvc.xml

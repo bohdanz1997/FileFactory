@@ -1,0 +1,161 @@
+﻿@model FileObmen.Models.ViewModels.UserDataViewModel
+@using FileObmen.Tools;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="col-sm-10 col-sm-push-1">
+    <div class="row">
+        <div class="box">
+            <div class="box-header">
+                <h2><i class="fa fa-align-justify"></i>Действия</h2>
+            </div>
+            <div class="box-content">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-6 col-md-3">
+                        <div class="text-center">
+                            <img src="~/Content/images/iconWebSend.png" width="175" height="128" alt="Alternate Text" />
+                            <div>@Html.ActionLink("Загрузить файлы", "Plupload", "File", null, new { @class = "btn btn-default btn-140px" })</div>
+                            <span class="small-info">
+                                Вы можете загрузить @Html.FileSize(Model.UserPlan.Balance)
+                                <br />на ваш аккаунт
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-6 col-md-3">
+                        <div class="text-center">
+                            <img src="~/Content/images/iconItems.png" width="175" height="128" alt="Alternate Text" />
+                            <div>@Html.ActionLink("Файлы", "FilesUploaded", null, new { @class = "btn btn-default btn-140px" })</div>
+                            <span class="small-info">
+                                Список файлов загруженых
+                                <br />на ваш аккаунт
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-6 col-md-3">
+                        <div class="text-center">
+                            <img src="~/Content/images/iconUser.png" width="175" height="128" alt="Alternate Text" />
+                            <div>@Html.ActionLink("Профиль", "UserInfo", "Profile", null, new { @class = "btn btn-default btn-140px" })</div>
+                            <span class="small-info">
+                                Просмотр и изменение
+                                <br />вашего профиля
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-6 col-md-3">
+                        <div class="text-center">
+                            <img src="~/Content/images/iconPlan.png" width="175" height="128" alt="Alternate Text" />
+                            <div>@Html.ActionLink("Сервис план", "EditPlan", "Profile", null, new { @class = "btn btn-default btn-140px" })</div>
+                            <span class="small-info">
+                                Выберите сервис план
+                                <br />соответствующий вашим
+                                <br />требованиям
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="box">
+            <div class="box-content">
+                <div class="plan-feature">
+                    <h2 class="plan-info">Ваш текущий сервис план</h2>
+                    <h2 class="plan-info">Бесплатный аккаунт - 1GB</h2>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success"
+                             role="progressbar"
+                             aria-valuenow="40"
+                             aria-valuemin="0"
+                             aria-valuemax="100"
+                             style="width: @Model.UserPlan.Percent">
+                        </div>
+                    </div>
+                    <span class="can-transfer">Вы можете загрузить еще @Html.FileSize(Model.UserPlan.Balance)</span>
+                    <span class="traffic-usage">Использовано @Html.FileSize(Model.UserPlan.Transfered) с @Html.FileSize(Model.UserPlan.Total)</span>
+                    @Html.ActionLink("Улучшить", "EditPlan", null, new { @class = "btn btn-default upgrade" })
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="">
+            <div class="box">
+                <div class="box-header">
+                    <h2>
+                        <i class="fa fa-align-justify"></i>Трафик
+                    </h2>
+                    <ul class="nav nav-tabs" id="mainCharts">
+                        <li id="chart24h" class="active"><a data-toggle="tab" href="#week">Неделя</a></li>
+                        <li id="chartWeek"><a data-toggle="tab" href="#month">Месяц</a></li>
+                    </ul>
+                </div>
+                <div class="box-content">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="week">
+                            <div id="traffic-week" style="height: 300px; width: 100%"></div>
+                        </div>
+                        <div class="tab-pane" id="month">
+                            <div id="traffic-month" style="height: 300px; width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/genius/jquery.flot.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.pie.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.stack.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.resize.min.js"></script>
+    <script src="~/Scripts/genius/jquery.flot.time.min.js"></script>
+    <script src="~/Scripts/genius/pages/charts-flot.js"></script>
+    <script src="~/Scripts/genius/pages/ui-sliders-progress.js"></script>
+
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetUserFiles")',
+                dataType: 'json',
+                success: function (data) {
+                    var week = [];
+                    var month = [];
+                    var i, k = 1;
+                    var day = (new Date()).getDate();
+
+                    if (day > 7) {
+                        for (i = day - 6; i <= day; i++) {
+                            week[k] = [i, data[i - 1] / 1024];
+                            k++;
+                        }
+                    } else {
+                        for (i = 1; i <= day; i++) {
+                            week[i] = [i, data[i - 1] / 1024];
+                        }
+                    }
+
+                    for (i = 0; i < data.length; i++) {
+                        month[i] = [i, data[i - 1] / 1024];
+                    }
+
+                    initTrafficChart(week, "#traffic-week");
+                    initTrafficChart(month, "#traffic-month");
+                }
+            });
+        });
+
+    </script>
+}

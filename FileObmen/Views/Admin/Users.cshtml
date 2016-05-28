@@ -1,0 +1,53 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<FileObmen.Models.Entities.User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<table class="table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Роль</th>
+            <th>Email</th>
+            <th>Пароль</th>
+            <th>Дата регистрации</th>
+            <td>Действия</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr class="@user.Id">
+                <td>@user.Login</td>
+                <td id="@user.Id-role">@user.Role.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Password</td>
+                <td>@user.RegistrationDate.ToShortDateString()</td>
+                <td>
+                    <span id="@user.Id-options">
+                        @if (user.Role.Name.Equals("admin"))
+                        {
+                            <button class="btn btn-primary" name="demote-user" id="@user.Id" title="Понизить">
+                                <i class="fa fa-arrow-down"></i>
+                            </button>
+                        }
+                        @if (user.Role.Name.Equals("user"))
+                        {
+                            <button class="btn btn-primary" name="promote-user" id="@user.Id" title="Повысить">
+                                <i class="fa fa-arrow-up"></i>
+                            </button>
+                        }
+                    </span>
+
+                    <button class="btn btn-danger" name="del-user" id="@user.Id" title="Удалить">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Users", new { page }))

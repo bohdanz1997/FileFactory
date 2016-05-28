@@ -1,0 +1,23 @@
+﻿@model FileObmen.Models.Entities.User
+
+@if (Model != null)
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Файлы", "FilesUploaded", "Profile")</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        @if (Model.Role.Name.Equals("admin"))
+        {
+            <li>@Html.ActionLink("Админ-панель", "Stats", "Admin")</li>
+        }
+        <li>@Html.ActionLink("Аккаунт", "Index", "ProFile")</li>
+        <li>@Html.ActionLink("Выйти", "Logoff", "Account")</li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Вход", "Login", "Account")</li>
+        <li>@Html.ActionLink("Регистрация", "Register", "Account")</li>
+    </ul>
+}

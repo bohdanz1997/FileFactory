@@ -1,0 +1,41 @@
+﻿@model FileInfo[]
+
+@{
+    ViewBag.Title = "SetAvatar";
+}
+
+<div class="col-sm-10 col-sm-push-1">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <div class="box-content">
+                    <div class="row">
+                        @foreach (var file in Model)
+                        {
+                            <div style="margin-bottom: 30px" class="col-sm-2 col-xs-6">
+                                <img class="img-thumbnail" src="~/Content/avatars/@file.Name" id="@file.Name" alt="Sample Image">
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm("SetAvatar", "Profile", FormMethod.Post))
+    {
+        <input type="hidden" value="" name="hiddenField" id="hiddenField"/>
+        <input type="submit" value="Изменить" class="btn btn-primary"/>
+    }
+    <div style="margin-bottom: 30px"></div>
+</div>
+
+@section scripts {
+    <script>
+        $('.img-thumbnail').click(function (e) {
+            e.preventDefault();
+            $('.img-thumbnail').css("background-color", "#fff");
+            $(this).css("background-color", "#78CD51");
+            $('#hiddenField').attr("value", $(this).attr("id"));
+        });
+    </script>
+}

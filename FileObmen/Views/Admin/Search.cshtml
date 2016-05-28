@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="form-group">
+    <div class="controls">
+        <div class="input-group col-md-6">
+            @using (Ajax.BeginForm("Search", new AjaxOptions { UpdateTargetId = "results" }))
+            {
+                <span class="input-group-btn">
+                    <input id="appendedInputButton" class="form-control" size="16" name="data" type="text" placeholder="Введите запрос">
+                    <input style="border-top-right-radius: 3px; border-bottom-right-radius: 3px" 
+                           class="btn btn-primary" id="search-btn" value="Поиск" type="submit">
+                </span>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="results"></div>
+
+@section scripts{
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
+    <script src="~/Scripts/genius/jquery.nestable.min.js"></script>
+    <script src="~/Scripts/genius/pages/ui-nestable-list.js"></script>
+}

@@ -1,0 +1,56 @@
+﻿@model FileObmen.Models.ViewModels.FileEditModel
+
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal" area-hidden="true">&times;</button>
+        <h2><i class="fa fa-file"></i>&nbsp;&nbsp;Редактирование полей</h2>
+    </div>
+    <div class="modal-body">
+        @using (Html.BeginForm("EditFile", "File", FormMethod.Post,
+                            new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <div class="form-group">
+                <div class="input-group col-sm-12">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <div class="form-group">
+                <div class="input-group col-sm-12">
+                    @Html.LabelFor(model => model.Password, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+                <div class="form-group">
+                    <div class="input-group col-sm-12">
+                        @Html.LabelFor(model => model.DeleteTime, new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.DeleteTime, new[]
+                        {
+                            new SelectListItem {Text = "1 день", Value = "1"},
+                            new SelectListItem {Text = "7 дней", Value = "7"},
+                            new SelectListItem {Text = "14 дней", Value = "14"},
+                            new SelectListItem {Text = "30 дней", Value = "30"}
+                        }, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.DeleteTime)
+                        <input type="hidden" name="days-expired" value="@Model.DeleteTime" />
+                    </div>
+                </div>
+
+                <input type="hidden" name="Id" value="@Model.Id" />
+                <button class="btn btn-primary" type="submit" id="submit-profile">Подтвердить</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

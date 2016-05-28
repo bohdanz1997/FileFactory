@@ -1,0 +1,15 @@
+﻿@using FileObmen.Tools
+@model IEnumerable<FileObmen.Models.Entities.File>
+
+
+<div class="dd" id="nestable4">
+    <ol class="dd-list">
+        <li class="dd-item dd3-item" data-id="19">
+            @foreach (var item in Model)
+            {
+                <div class="dd3-content">@Html.PageLinks(item, x => Url.Action("Details", "File", new { sha = x }))</div>
+            }
+        </li>
+    </ol>
+</div>
+<div class="clearfix"></div>

@@ -1,0 +1,89 @@
+﻿@using FileObmen.Tools
+@model FileObmen.Models.Entities.File
+
+@{
+    ViewBag.Title = "Просмотр деталей";
+    string file;
+    if (Model != null)
+    {
+        file = "/Content/icons/" + Model.Description;
+    }
+    else
+    {
+        file = "/Content/images/fileExpired.png";
+    }
+}
+
+<div class="col-sm-10 col-sm-push-1">
+    <div class="box">
+        <div class="box-content">
+            <div class="file-container">
+                <div class="text-center">
+                    @if (Model != null)
+                    {
+                        <h2 class="file-name">@Model.Name</h2>
+                        <div class="row">
+                            <div class="file-icon-container">
+                                <img src="@file" width="175" height="175" alt="Alternate Text" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="file-details">
+                                <tbody>
+                                    <tr>
+                                        <td>Загружен:</td>
+                                        <td>@Model.CreationTime.ToShortDateString()</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Истекает:</td>
+                                        <td>@Model.DeleteTime.ToShortDateString()</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Размер:</td>
+                                        <td>@Html.FileSize(Model.Size)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class='filelink-wrap'>
+                                <div class="details-title">
+                                    Это ссылка для загрузки и отправки
+                                </div>
+                                <span class='filelink'>
+                                    @Html.ActionLink((string)ViewBag.Url, "ShowFile", "Home", new { sha = Model.Sha }, new { @class = "download-link", id = "foo", target = "_blank" })
+                                </span>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-default" data-clipboard-target="#foo" id="copy-button">Скопировать ссылку</button>
+                                @Html.ActionLink("Поделится", "Share", new { sha = Model.Sha }, new { @class = "btn btn-default compItem", target = "_blank" })
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 20px">
+                            @Html.ActionLink("Скачать", "GetFile", "File", new { sha = Model.Sha }, new { @class = "btn btn-default" })
+                            @Html.ActionLink("Страница загрузки", "ShowFile", "Home", new { sha = Model.Sha }, new { @class = "btn btn-default", target = "_blank" })
+                            @Html.ActionLink("Редактировать", "EditFile", "File", new { sha = Model.Sha }, new { @class = "btn btn-default compItem" })
+                            <button class="btn btn-default" name="del-btn" id="@Model.Sha">Удалить</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <h2 class="file-name">Упс, такого файла еще не загружено</h2>
+                        <div class="row">
+                            <div class="file-icon-container">
+                                <img src="@file" width="175" height="175" alt="Alternate Text" />
+                            </div>
+                        </div>
+                        <h2 class="file-not-found">Файл не найден</h2>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/modal-init.js"></script>
+    <script src="~/Scripts/clipboard.min.js"></script>
+    <script>new Clipboard('#copy-button');</script>
+}

@@ -1,0 +1,347 @@
+﻿/* All */
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Head menu */
+
+.nav-container li:hover {
+    background-color: #e7e7e7;
+}
+
+/* Show File page */
+.file-icon-container {
+    margin: 20px auto;
+}
+
+.file-name {
+    font-size: 25px;
+}
+
+.file-not-found {
+    font-size: 20px;
+}
+
+.file-container {
+    margin-bottom: 30px;
+}
+
+/* Upload/Details file */
+
+.filelink-wrap {
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+.table-bordered {
+    margin-bottom: 10px;
+}
+
+.download-link {
+    text-decoration: none;
+    color: #428bca;
+    font-size: 18px;
+}
+
+    .download-link:hover {
+        text-decoration: none;
+        color: #FFA500;
+    }
+
+.no-display {
+    display: none !important;
+}
+
+.complete {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.filelink {
+    border: 1px solid #CCCCCC;
+    padding: 12px 10px;
+}
+
+.action-btns {
+    margin-bottom: 12px;
+}
+
+.details-title {
+    font-size: 25px;
+    margin: 20px auto;
+}
+
+.file-details {
+    font-size: 16px;
+    margin: 5px auto;
+}
+
+.file-details td {
+    padding: 3px;
+    text-align: left;
+}
+
+/* Home page */
+
+.header-wrap {
+    background: url("images/header-bg-shadow.jpg") no-repeat center top;
+    background-size: cover;
+}
+
+.plupload-wrap {
+    background: url("images/Valley_s.jpg") no-repeat center top;
+}
+
+.file-download-wrap {
+    background: url("images/Globe_s.jpg") no-repeat center top;
+}
+
+.plupload-wrap,
+.file-download-wrap {
+    background-size: cover;
+    padding-top: 60px;
+    min-height: 600px;
+}
+
+.home-main {
+    background-color: #fff;
+}
+
+.plans-needs {
+    background-color: #fff;
+    margin-bottom: 40px;
+}
+
+.main-top {
+    color: #fff;
+}
+
+.text-blue {
+    color: #5B85BE;
+}
+
+.text-orange {
+    color: #EC8B1B;
+}
+
+.text-top-big {
+    font-size: 48px;
+    padding-top: 50px;
+    margin-bottom: 15px;
+}
+
+.text-top-small {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.line1 {
+    font-size: 20px;
+    display: block;
+}
+
+.line2 {
+    font-size: 22px;
+    display: block;
+}
+
+.line3 {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.block-welcome-wrap {
+    margin-bottom: 80px !important;
+}
+
+.block-welcome {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+
+.intro span {
+    display: block;
+    font-size: 20px;
+}
+
+h2 {
+    line-height: 44px;
+}
+
+.btn-wide {
+    width: 240px;
+}
+
+.btn-140px {
+    width: 140px;
+}
+
+.feature-header {
+    font-size: 20px;
+}
+
+.feature-header {
+    text-decoration: none;
+}
+
+.feature-header:hover {
+    text-decoration: none;
+    color: #f93;
+}
+
+.feature-img {
+    margin-bottom: 20px;
+}
+
+.feature-text {
+    font-size: 16px;
+}
+
+.panel-group .panel .panel-heading {
+    background: #f3f3f3 !important;
+    border: none !important;
+}
+
+.panel-group .panel {
+    border: none !important;
+}
+
+.panel-group .panel-body {
+    background: #f3f3f3 !important;
+    border: none !important;
+}
+
+.panel-custom {
+    text-align:center;
+    border: 1px solid #5883c7 !important;
+}
+
+.priceTag {
+    min-height: 230px;
+    padding: 0 !important;
+    padding-bottom: 10px !important;
+}
+
+.plan-active {
+    border: 1px solid #5cb85c !important;
+}
+
+.plan-active .panel-heading {
+    background-color: #5cb85c;
+}
+
+.panel-heading {
+    background-color: #5883c7;
+    color: white;
+}
+
+.panel-heading h3 {
+    font-weight:bold;
+}
+
+.the-price {
+    margin: 0;
+    padding:20px;
+    background-color: rgba(220,220,220,.17);
+}
+
+.the-price h2 {
+    font-size: 40px;
+}
+
+.tariffCardTable {
+    margin-top: 0 !important;
+}
+
+.title-new-center {
+    max-width: 500px;
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+    font-size: 30px;
+    color: #333;
+    display: block;
+    margin: 40px auto;
+}
+
+/* Profile page */
+
+.small-info {
+    display:block;
+    margin-top:15px;
+    font-size:11px;
+}
+
+.plan-feature {
+    padding: 0 15px;
+}
+
+.plan-info {
+    font-size: 20px;
+}
+
+.upgrade {
+    float:right;
+}
+
+.traffic-usage {
+    text-align:right;
+    display: block;
+    font-size:11px;
+    margin-bottom:10px;
+}
+
+.can-transfer {
+    float:left;
+}
+
+.progress {
+    height:30px !important;
+    border: 1px solid #d7d7d7 !important;
+    border-radius: 0 !important;
+    background-color: #fff !important;
+}
+
+.progress-bar-success {
+    border: 2px solid #fff !important;
+    background-color: #5cb85c !important;
+}
+
+.password-encoded {
+    font-size: 26px;
+}
+
+/* Files uploaded page */
+
+.description-block {
+    font-size: 18px;
+    color: #666;
+    line-height: 30px;
+    padding: 10px;
+}
+
+.description-block-wrap {
+    margin-bottom: 20px;
+}
